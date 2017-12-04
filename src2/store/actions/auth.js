@@ -40,13 +40,17 @@ export const auth = (email, password, isSignup) => {
         axios
             .post(url, authData)
             .then(response => {
+                console.log('------------------------------------')
                 console.log(response)
+                console.log('------------------------------------')
                 dispatch(
                     authSuccess(response.data.idToken, response.data.localId)
                 )
             })
             .catch(err => {
+                console.log('------------------------------------')
                 console.log(err)
+                console.log('------------------------------------')
                 dispatch(authFail(err))
             })
     }
